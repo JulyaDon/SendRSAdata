@@ -28,7 +28,7 @@ public class RSAEncrypter implements IEncrypter {
         BigInteger pubExp = new BigInteger("010001", 16);
 
         int bit = modulus.bitLength();
-        int chunkSize = (int)Math.ceil(bit / 16) - 11;
+        int chunkSize = (int)Math.ceil(bit / 8) - 11;
 
         String[] chunks = plaintext.split("(?<=\\G.{" + chunkSize + "})");
 
